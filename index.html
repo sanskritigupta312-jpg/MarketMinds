@@ -9,11 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>MarketMinds — Digital Marketing &amp; Growth Agency</title>
-    <meta name="description" content="MarketMinds is a full-service digital agency crafting brand, web and performance marketing strategies that turn attention into growth. Led by Dhruv Verma." />
+    <meta
+      name="description"
+      content="MarketMinds is a full-service digital agency crafting brand, web and performance marketing strategies that turn attention into growth. Led by Dhruv Verma."
+    />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="MarketMinds — Digital Marketing & Growth Agency" />
-    <meta property="og:description" content="Brand, web and performance marketing, crafted with intention. MarketMinds turns attention into growth." />
+    <meta
+      property="og:title"
+      content="MarketMinds — Digital Marketing & Growth Agency"
+    />
+    <meta
+      property="og:description"
+      content="Brand, web and performance marketing, crafted with intention. MarketMinds turns attention into growth."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/favicon-512.png" />
 
@@ -24,17 +33,34 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <script>
       // Prevent flash of wrong theme before React mounts
       (function () {
         try {
-          var stored = localStorage.getItem('mm-theme');
-          var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-          document.documentElement.classList.toggle('dark', theme !== 'light');
+          var stored = localStorage.getItem("mm-theme");
+          var theme =
+            stored ||
+            (window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark");
+          document.documentElement.classList.toggle("dark", theme !== "light");
           document.documentElement.style.colorScheme = theme;
         } catch (e) {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "MarketMinds",
+        "description": "Digital marketing and growth agency offering brand strategy, web design & development, SEO, performance marketing, social & content, and analytics.",
+        "url": "https://market-minds-phi.vercel.app",
+        "founder": { "@type": "Person", "name": "Dhruv Verma" },
+        "areaServed": "Worldwide",
+        "sameAs": ["https://www.instagram.com/market.minds001"]
+      }
     </script>
   </head>
   <body>
