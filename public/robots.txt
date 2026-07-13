@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://market-minds-phi.vercel.app/sitemap.xml

@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import RevealOnScroll from '../ui/RevealOnScroll';
-import dhruvPhoto from '../../assets/images/dhruv-verma.png';
+import dhruvPhoto from '../../assets/images/dhruv-verma.webp';
 import { brand, founderBio } from '../../data/content';
 
 export default function FounderSpotlight() {
@@ -15,6 +15,8 @@ export default function FounderSpotlight() {
               <img
                 src={dhruvPhoto}
                 alt="Dhruv Verma, Founder & Creative Director of MarketMinds"
+                loading="lazy"
+                decoding="async"
                 className="relative aspect-[4/5] w-full object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent p-6">

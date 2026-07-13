@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoMark from '../../assets/images/logo-mark.png';
+import logoMark from '../../assets/images/logo-mark.webp';
 
 export default function Logo({ className = '', showWordmark = true, size = 'md' }) {
   const badgeSize = size === 'sm' ? 'h-8 w-8' : 'h-10 w-10';
