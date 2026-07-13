@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-paper-border dark:border-ink-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-charcoal dark:bg-ink dark:text-ivory font-sans antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::selection {
+    @apply bg-gold-400/30 text-inherit;
+  }
+
+  /* Visible keyboard focus, respected everywhere */
+  :focus-visible {
+    outline: 2px solid #C9A227;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-paper dark:bg-ink;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-700/40 dark:bg-gold-500/30;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-500/50;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-widest2 text-gold-600 dark:text-gold-400;
+  }
+
+  .section-pad {
+    @apply px-6 sm:px-10 lg:px-16 xl:px-24;
+  }
+
+  .hairline {
+    @apply border-t border-charcoal/10 dark:border-ivory/10;
+  }
+
+  .gold-text {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 ease-signature;
+  }
+  .btn-primary {
+    @apply btn bg-gold-gradient text-ink shadow-gold hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply btn border border-charcoal/20 dark:border-ivory/20 text-charcoal dark:text-ivory hover:border-gold-500 hover:text-gold-600 dark:hover:text-gold-300 hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn text-charcoal dark:text-ivory hover:text-gold-600 dark:hover:text-gold-300;
+  }
+
+  .card {
+    @apply relative rounded-2xl border border-charcoal/10 dark:border-ivory/10 bg-paper-raised dark:bg-ink-soft shadow-card;
+  }
+}
+
+@layer utilities {
+  .mask-fade-x {
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
