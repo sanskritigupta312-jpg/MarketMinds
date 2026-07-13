@@ -37,7 +37,10 @@ export default function ContactForm() {
       message: form.message,
     };
 
+    const isKeySet = brand.web3formsAccessKey && brand.web3formsAccessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY';
+
     try {
+      if (!isKeySet) throw new Error('Access key not configured');
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },

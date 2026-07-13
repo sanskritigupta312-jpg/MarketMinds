@@ -15,7 +15,7 @@ export const brand = {
   email: 'marketmindsenquiry@gmail.com',
   // PLACEHOLDER — free access key from https://web3forms.com (takes ~1 minute,
   // just your email, no account needed). Powers the real contact form submission.
-  web3formsAccessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+  web3formsAccessKey: '1b4686c9-7030-4146-8fda-fea550b4c742',
   phoneDisplay: '+91 87078 58634',
   phoneHref: '+918707858634',
   whatsappNumber: '918707858634', // digits only, country code first, no +
