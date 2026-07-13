@@ -6,7 +6,7 @@ import { brand } from '../../data/content';
 const budgets = ['Under ₹50k / mo', '₹50k – ₹1.5L / mo', '₹1.5L – ₹5L / mo', '₹5L+ / mo'];
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', budget: budgets[0], message: '', website: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', budget: budgets[0], message: '', website: '' });
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
   const submitted = status === 'sent';
 
@@ -32,6 +32,7 @@ export default function ContactForm() {
       from_name: brand.name,
       name: form.name,
       email: form.email,
+      phone: form.phone,
       company: form.company,
       budget: form.budget,
       message: form.message,
@@ -53,7 +54,7 @@ export default function ContactForm() {
       // Fallback so a broken key or network hiccup never loses an enquiry.
       const subject = encodeURIComponent(payload.subject);
       const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nBudget: ${form.budget}\n\nMessage:\n${form.message}`
+        `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nCompany: ${form.company}\nBudget: ${form.budget}\n\nMessage:\n${form.message}`
       );
       window.location.href = `mailto:${brand.email}?subject=${subject}&body=${body}`;
       setStatus('error');
@@ -122,11 +123,20 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
+          <label htmlFor="phone" className="font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted">
+            Phone number
+          </label>
+          <input id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="Your phone number" className={inputClass} />
+        </div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="company" className="font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted">
             Company
           </label>
           <input id="company" name="company" value={form.company} onChange={handleChange} placeholder="Company name" className={inputClass} />
         </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="budget" className="font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted">
             Monthly budget
