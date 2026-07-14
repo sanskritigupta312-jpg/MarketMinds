@@ -4,7 +4,7 @@ import { differentiators } from '../../data/content';
 
 export default function WhyUs() {
   return (
-    <section className="bg-ink text-ivory">
+    <section className="bg-ink/95 text-ivory">
       <div className="section-pad py-24 sm:py-32">
         <SectionHeading
           eyebrow="Why MarketMinds"

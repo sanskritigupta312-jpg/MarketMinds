@@ -7,7 +7,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-ink text-ivory">
+    <footer className="relative bg-ink/95 text-ivory">
       <div className="section-pad py-20">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex flex-col gap-6">
