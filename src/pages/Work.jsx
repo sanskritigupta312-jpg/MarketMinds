@@ -8,7 +8,6 @@ import Seo from "../components/Seo";
 export default function Work() {
   return (
     <PageTransition>
-      // Work.jsx
       <Seo
         title="Our Approach"
         description="Discover, Strategy, Build, Launch, Grow — the exact five-stage sequence every MarketMinds engagement follows, no black boxes."
