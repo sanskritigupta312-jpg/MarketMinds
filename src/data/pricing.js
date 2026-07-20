@@ -9,7 +9,7 @@ export const pricingCategories = [
   {
     id: 'seo',
     label: 'SEO Services',
-    tagline: 'Organic search ranking — from ₹8,000 for On-Page to ₹12,000/month for Full SEO.',
+    tagline: 'Organic search ranking — from ₹5,000 for On-Page to ₹10,000/month for Full SEO.',
     plans: [
       {
         name: 'On-Page SEO',
