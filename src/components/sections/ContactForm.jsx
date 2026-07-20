@@ -161,21 +161,6 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="budget" className="font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted">
-            Monthly budget
-          </label>
-          <select id="budget" name="budget" value={form.budget} onChange={handleChange} className={`${inputClass} appearance-none`}>
-            {budgets.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
       <div className="flex flex-col gap-2">
         <label htmlFor="message" className="font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted">
           Tell us about the project
