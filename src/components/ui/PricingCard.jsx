@@ -35,7 +35,7 @@ export default function PricingCard({ plan, delay = 0 }) {
                 className={`flex items-start gap-2.5 text-sm leading-snug border-b border-charcoal/5 dark:border-ivory/5 pb-3 last:border-0 ${
                   !isExcluded
                     ? 'text-charcoal dark:text-ivory'
-                    : 'text-charcoal-muted/60 dark:text-ivory-muted/50'
+                    : 'text-charcoal-muted/75 dark:text-ivory-muted/50'
                 }`}
               >
                 {!isExcluded ? (

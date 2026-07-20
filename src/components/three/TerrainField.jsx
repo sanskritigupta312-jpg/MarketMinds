@@ -51,9 +51,11 @@ const fragmentShader = `
   varying float vViewZ;
 
   void main() {
-    // Peaks catch more "light" than valleys — cheap fake shading.
-    float brightness = clamp(0.4 + vElevation * 0.14, 0.05, 1.0);
-    vec3 color = uColor * brightness;
+    // Peaks catch more "color" than valleys.
+    // By mixing with uFogColor, the valleys fade into the background in BOTH dark and light modes,
+    // avoiding the issue where light mode valleys became black and overpowered the text.
+    float elevationFactor = clamp(0.4 + vElevation * 0.14, 0.05, 1.0);
+    vec3 color = mix(uFogColor, uColor, elevationFactor);
 
     // Fades into the page's own background color at the horizon, so the
     // terrain reads as emerging from the void rather than being clipped.

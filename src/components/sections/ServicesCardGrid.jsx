@@ -42,7 +42,7 @@ export default function ServicesCardGrid({ showHeading = true }) {
             { value: '2500+', label: 'Happy Customers' },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col items-center gap-1 text-center">
-              <span className="font-display text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gold-400 to-yellow-300 bg-clip-text text-transparent">
+              <span className="font-display text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gold-600 to-gold-500 dark:from-gold-400 dark:to-yellow-300 bg-clip-text text-transparent">
                 {stat.value}
               </span>
               <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted">

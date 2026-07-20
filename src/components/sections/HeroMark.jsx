@@ -51,7 +51,7 @@ export default function HeroMark() {
                 className={`relative z-10 flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full font-mono text-[10px] ${
                   i === 0
                     ? 'bg-gold-gradient text-ink shadow-gold'
-                    : 'border border-charcoal/15 bg-paper text-charcoal-muted dark:border-ivory/15 dark:bg-ink dark:text-ivory-muted'
+                    : 'border border-charcoal/15 bg-paper text-charcoal/80 dark:border-ivory/15 dark:bg-ink dark:text-ivory-muted'
                 }`}
               >
                 {step.number}

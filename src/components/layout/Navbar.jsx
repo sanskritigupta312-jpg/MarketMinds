@@ -51,7 +51,7 @@ export default function Navbar() {
                 `relative font-mono text-[12px] uppercase tracking-widest2 transition-colors duration-300 ${
                   isActive
                     ? 'text-gold-500'
-                    : 'text-charcoal/70 dark:text-ivory/70 hover:text-gold-500'
+                    : 'text-charcoal/80 dark:text-ivory/80 hover:text-gold-500'
                 }`
               }
             >
