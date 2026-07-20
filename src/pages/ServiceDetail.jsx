@@ -7,6 +7,7 @@ import CTASection from '../components/sections/CTASection';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
 import { webServices } from '../data/webServices';
 import { serviceIcons } from '../data/serviceIcons';
+import PricingCard from '../components/ui/PricingCard';
 
 function FAQItem({ q, a }) {
   const [open, setOpen] = useState(false);
@@ -84,6 +85,17 @@ export default function ServiceDetail() {
             {service.tagline}
           </motion.h1>
 
+          {service.startingPrice && (
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="mt-6 inline-block rounded-xl border border-gold-500/30 bg-gold-500/10 px-5 py-2 font-mono text-sm uppercase tracking-widest text-gold-500"
+            >
+              <strong>{service.startingPrice}</strong>
+            </motion.div>
+          )}
+
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,28 +151,18 @@ export default function ServiceDetail() {
           </div>
         </RevealOnScroll>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${service.types.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
           {service.types.map((type, i) => (
-            <RevealOnScroll key={type.title} delay={i * 0.08}>
-              <div className="flex flex-col gap-5 rounded-2xl border border-charcoal/10 dark:border-ivory/10 bg-paper-raised dark:bg-ink-soft p-7 hover:border-gold-500/30 transition-colors duration-300">
-                <div>
-                  <h3 className="font-display text-xl text-charcoal dark:text-ivory mb-2">
-                    {type.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
-                    {type.desc}
-                  </p>
-                </div>
-                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {type.features.map(f => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm text-charcoal dark:text-ivory">
-                      <CheckCircle2 size={14} className="shrink-0 text-gold-500" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </RevealOnScroll>
+            <PricingCard
+              key={type.title}
+              delay={i * 0.08}
+              plan={{
+                name: type.title,
+                price: type.price,
+                popular: type.popular || type.title.includes('Full SEO') || type.title.includes('SMO') || type.title.includes('Dynamic'),
+                features: type.features || [],
+              }}
+            />
           ))}
         </div>
       </section>

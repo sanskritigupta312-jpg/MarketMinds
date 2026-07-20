@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import RevealOnScroll from './RevealOnScroll';
 
 export default function PricingCard({ plan, delay = 0 }) {
-  const { name, price, cadence, pages, support, popular, features } = plan;
+  const { name, price, popular, features } = plan;
 
   return (
     <RevealOnScroll delay={delay} className="h-full">
@@ -18,46 +18,45 @@ export default function PricingCard({ plan, delay = 0 }) {
           </span>
         )}
 
-        <div className="flex flex-col gap-1">
-          <h3 className="font-display text-xl text-charcoal dark:text-ivory">{name}</h3>
-          <div className="flex items-baseline gap-2">
-            <span className="font-display text-3xl text-charcoal dark:text-ivory">{price}</span>
-            <span className="text-xs text-charcoal-muted dark:text-ivory-muted">{cadence}</span>
+        <div className="flex flex-col gap-1 items-center text-center pb-5 border-b border-charcoal/10 dark:border-ivory/10">
+          <h3 className="font-display text-2xl text-charcoal dark:text-ivory mb-3">{name}</h3>
+          <div className="flex items-baseline justify-center gap-2">
+            <span className="font-display text-4xl text-charcoal dark:text-ivory">{price}</span>
           </div>
         </div>
 
-        <div className="flex flex-col gap-1 border-y border-charcoal/10 py-4 font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:border-ivory/10 dark:text-ivory-muted">
-          <span>{pages}</span>
-          <span>{support}</span>
-        </div>
-
         <ul className="flex flex-1 flex-col gap-3">
-          {features.map((f) => (
-            <li
-              key={f.label}
-              className={`flex items-start gap-2.5 text-sm leading-snug ${
-                f.included
-                  ? 'text-charcoal dark:text-ivory'
-                  : 'text-charcoal-muted/60 dark:text-ivory-muted/50 line-through decoration-1'
-              }`}
-            >
-              {f.included ? (
-                <Check size={15} className="mt-0.5 shrink-0 text-gold-500" strokeWidth={2} />
-              ) : (
-                <X size={15} className="mt-0.5 shrink-0 opacity-50" strokeWidth={2} />
-              )}
-              {f.label}
-            </li>
-          ))}
+          {features.map((f, idx) => {
+            const isExcluded = f.trim().startsWith('✘');
+            const label = isExcluded ? f.replace('✘', '').trim() : f;
+            return (
+              <li
+                key={idx}
+                className={`flex items-start gap-2.5 text-sm leading-snug border-b border-charcoal/5 dark:border-ivory/5 pb-3 last:border-0 ${
+                  !isExcluded
+                    ? 'text-charcoal dark:text-ivory'
+                    : 'text-charcoal-muted/60 dark:text-ivory-muted/50'
+                }`}
+              >
+                {!isExcluded ? (
+                  <Check size={16} className="mt-0.5 shrink-0 text-gold-500" strokeWidth={2.5} />
+                ) : (
+                  <X size={16} className="mt-0.5 shrink-0 opacity-50" strokeWidth={2.5} />
+                )}
+                <span className="flex-1 text-center font-medium">{label}</span>
+              </li>
+            );
+          })}
         </ul>
 
-        <Link
-          to="/contact"
-          className={popular ? 'btn-primary w-full' : 'btn-outline w-full'}
-        >
-          Get started
-          <ArrowUpRight size={15} />
-        </Link>
+        <div className="mt-auto pt-4">
+          <a
+            href="tel:+918707858634"
+            className={popular ? 'btn-primary w-full justify-center' : 'btn-outline w-full justify-center'}
+          >
+            Call Now
+          </a>
+        </div>
       </div>
     </RevealOnScroll>
   );

@@ -1,238 +1,339 @@
 // ─────────────────────────────────────────────────────────────
-// WEB SERVICES — 6 service cards with individual page content
-// Inspired by webvoom.com, adapted for MarketMinds brand.
+// WEB SERVICES — core service cards with individual page content
+// Content mirrors webvoom.com offerings exactly.
 // ─────────────────────────────────────────────────────────────
 
 export const webServices = [
   {
-    id: 'website-design',
-    slug: '/services/website-design',
-    title: 'Website Design',
-    tagline: 'Websites that convert visitors into customers.',
-    image: '/service-website-design.png',
-    icon: 'LayoutTemplate',
-    short: 'Custom static, dynamic, WordPress & e-commerce websites — mobile-friendly, fast-loading, and SEO-ready from day one.',
-    overview: `Your website is your 24/7 salesperson. We design and develop websites that don't just look great — they're engineered to load fast, rank on Google, and convert visitors into real business leads.
-
-From a simple static landing page to a fully dynamic e-commerce platform, every project we ship is responsive, accessible, and built to grow with your business.`,
-    types: [
-      {
-        title: 'Static Website',
-        desc: 'Perfect for small businesses, institutes, salons, shops, personal portfolios, and local service providers. Fast, affordable, and zero maintenance.',
-        features: ['Responsive & Mobile Friendly', 'Free SEO Setup', 'WhatsApp Chat Button', 'Direct Call Button', 'Social Share Buttons', 'Pop-Up & Countdown', 'Analytics Integration', 'Search Engine Submission'],
-      },
-      {
-        title: 'Dynamic Website',
-        desc: 'Ideal for medium and large businesses that need a CMS, login system, payment gateway, or e-commerce functionality.',
-        features: ['All Static Features', 'CMS Admin Panel', 'Login System', 'Payment Gateway Integration', 'Lead Generation Forms', 'E-Commerce Setup', 'Live Chat + Multiple Agents', 'Full SEO & Sitemap'],
-      },
-      {
-        title: 'WordPress Website',
-        desc: 'Runs on the world\'s most popular CMS. Easy to manage, ideal for blogs, news portals, and small-to-medium businesses.',
-        features: ['1200+ Premium Themes', 'Plugin Ecosystem', 'Easy Content Management', 'WooCommerce Ready', 'SEO Plugins (Yoast)', 'Regular Security Updates'],
-      },
-      {
-        title: 'E-Commerce Website',
-        desc: 'Fully functional online stores with product management, cart, checkout, and payment integration.',
-        features: ['Product Catalogue', 'Shopping Cart & Checkout', 'Multiple Payment Gateways', 'Order Management', 'Discount & Coupon System', 'Mobile Commerce Ready'],
-      },
-    ],
-    deliverables: ['UI/UX Design', 'Responsive Development', 'On-Page SEO', 'WhatsApp & Call Integration', 'Analytics Setup', 'Speed Optimisation', 'Google Search Console Submission', '1 Year Support'],
-    faqs: [
-      { q: 'How long does it take to build a website?', a: 'A static website typically takes 5–7 working days. A dynamic or e-commerce site takes 2–4 weeks depending on complexity.' },
-      { q: 'Will my website work on mobile?', a: 'Yes. Every website we build is fully responsive and tested across all screen sizes and browsers.' },
-      { q: 'Do you provide hosting?', a: 'We can recommend and set up hosting for you, or work with your existing hosting provider.' },
-    ],
-  },
-  {
     id: 'seo-services',
+    startingPrice: 'From ₹8,000',
     slug: '/services/seo-services',
     title: 'SEO Services',
     tagline: 'Rank higher. Get found. Grow organically.',
     image: '/service-seo.png',
     icon: 'TrendingUp',
-    short: 'Technical, on-page, and off-page SEO strategies that drive compounding organic traffic and first-page Google rankings.',
-    overview: `SEO is the highest-ROI digital marketing channel — but only when done right. We build search visibility that compounds over time, driving qualified organic traffic long after the initial work is done.
+    short: 'On-Page SEO, Full SEO (On-Page + Off-Page), and Google My Business / Google Map SEO that drive compounding organic traffic.',
+    overview: `SEO is a strategy which allows you to improve the visibility of your website on the search engine's and rank you higher. It helps drive huge amount of traffic to your website which can convert into high-value sales. We Offer Following Type Of SEO -
 
-Our SEO process starts with a thorough technical audit, followed by keyword research aligned to real business intent, on-page optimisation, and a white-hat authority-building strategy.`,
+1- Website SEO
+(a) On-Page SEO
+(b) Off-Page SEO
+(c) Full SEO (On-Page + Off-Page)
+
+2- Google My Business/Google Map SEO
+
+1- Website SEO
+On-Page SEO -
+On-page SEO relates to the content on your website. It includes strategies to optimize an individual page on a website. It refers all the measures that can be taken directly within your website to improve its position in the search rankings.
+
+On-page SEO factors -
+(a) Meta Tag Optimization
+(b) Meta Description
+(c) Internal Linking
+(d) Image & Hyperlink Optimization
+(e) Header Tags Optimization
+(f) Content Optimization
+(g) keyword optimization
+(h) Title Tag Optimization
+(I) Page Speed Optimization
+
+Off-Page SEO -
+Off-Page SEO help strengthen the influence and relationship your website has with other Blog/Websites. It includes strategies to build a website's reputation and authority. These factors help search engines see that a website is an ideal search result because it is from a reputable, reliable, trusted source.
+
+Off-page SEO factors -
+(a) Backlinks
+(b) Social Promotion
+(c) Domain Authority
+(d) Article & Blog Submission
+(e) Q & A Submissions
+(f) Website Promotion
+(g) Guest Blog Posting
+
+2- Google My Business/Google Map SEO
+Google My Business (GMB) SEO refers to the strategies and practices used to optimize your Google My Business listing to improve its visibility in local search results. By effectively managing and optimizing your GMB profile, you can attract more customers and enhance your online presence.`,
     types: [
       {
         title: 'On-Page SEO',
-        desc: 'Optimising every element on your website pages to help Google understand and rank your content.',
-        features: ['Keyword Research & Mapping', 'Title Tag & Meta Optimisation', 'Header Structure (H1–H6)', 'Content Optimisation', 'Internal Linking', 'Image Alt Tags', 'Page Speed Fixes', 'Schema Markup'],
+        price: '₹8,000',
+        desc: 'On-page SEO relates to the content on your website. It includes strategies to optimize an individual page on a website. It refers all the measures that can be taken directly within your website to improve its position in the search rankings.',
+        features: ['Meta Tag Optimization', 'Meta Description', 'Image & Hyperlink Optimization', 'Content Optimization', 'Keyword Optimization', 'Title Tag Optimization', 'Internal Linking', 'Header Tags Optimization', 'Footer Optimization', 'Xml Sitemap Creation', 'Robots.Txt Creation'],
       },
       {
-        title: 'Off-Page SEO',
-        desc: 'Building your website\'s authority through quality backlinks and external signals.',
-        features: ['High-DA Backlink Building', 'Guest Posting', 'Business Directory Submissions', 'Brand Mentions', 'Social Signals', 'Competitor Link Analysis'],
+        title: 'Full SEO (On-Page + Off-Page)',
+        price: '₹12,000/month',
+        desc: 'Off-Page SEO help strengthen the influence and relationship your website has with other Blog/Websites. It includes strategies to build a website\'s reputation and authority.',
+        features: ['All On-Page SEO Activity', 'Social Bookmarking', 'Article & Blog Submission', 'Directory Submission', 'Q & A Submissions', 'Web 2.0 Creation', 'Page Speed Optimization', 'Google & Bing Webmaster Tools Set Up', 'Google Analytics Set Up', 'Search Engine Rank Report', 'Spam Score Check', 'Other Off Page Activity'],
       },
       {
-        title: 'Technical SEO',
-        desc: 'Fixing the technical foundations that prevent search engines from properly crawling and indexing your site.',
-        features: ['Crawl Error Fixes', 'XML Sitemap Setup', 'Robots.txt Optimisation', 'Core Web Vitals', 'Mobile Usability', 'HTTPS & Security', 'Duplicate Content Audit', 'Structured Data'],
-      },
-      {
-        title: 'Local SEO',
-        desc: 'Dominate local search results and Google Maps for customers searching near you.',
-        features: ['Google Business Profile Setup', 'Local Citation Building', 'Review Management', 'Local Keyword Targeting', 'NAP Consistency', '"Near Me" Optimisation'],
+        title: 'GMB SEO (Local SEO)',
+        price: '₹10,000/month',
+        desc: 'Google My Business (GMB) SEO refers to the strategies and practices used to optimize your Google My Business listing to improve its visibility in local search results.',
+        features: ['Profile Management', 'Regular Posts and Updates', 'Customer Reviews Management', 'High Quality Photo Updates', 'High-Quality Visual Content', 'Business Description Updates', 'Services Updates', 'Local Citations and Backlinks'],
       },
     ],
     deliverables: ['Full SEO Audit', 'Keyword Strategy Report', 'On-Page Optimisation', 'Technical Fixes', 'Monthly Backlink Building', 'Rank Tracking Dashboard', 'Monthly Progress Report', 'Google Search Console Management'],
     faqs: [
       { q: 'How long does SEO take to show results?', a: 'For low-competition keywords, you can see movement in 2–3 months. Competitive terms typically take 4–8 months. We give you a realistic timeline based on your specific keywords.' },
       { q: 'Do you guarantee first-page rankings?', a: 'No agency can ethically guarantee specific rankings — Google\'s algorithm has too many variables. We guarantee a thorough, white-hat process and transparent reporting.' },
-      { q: 'What is your SEO pricing?', a: 'Our SEO plans start from ₹12,000/month and scale based on the number of keywords and competitiveness. Contact us for a custom quote.' },
+      { q: 'What is Minimum Time Required to Rank a Website in Top 10?', a: 'SEO Ranking time depends upon Keyword Difficulty (KD). If KD is less than 20, it takes around 4 to 6 months.' },
     ],
   },
   {
     id: 'digital-marketing',
+    startingPrice: 'From ₹10,000/mo',
     slug: '/services/digital-marketing',
     title: 'Digital Marketing',
     tagline: 'Reach more customers across every digital channel.',
     image: '/service-digital-marketing.png',
     icon: 'Target',
-    short: 'Social media marketing, Google Ads, SEO, email campaigns, and content strategy — all under one roof.',
-    overview: `Digital marketing is how modern businesses grow. We combine paid and organic channels to put your brand in front of the right audience at the right time — whether that's on Google, Instagram, Facebook, or in their inbox.
+    short: 'SMM, SEM, SEO, SMO, SMS & WhatsApp Marketing, Content & Email Marketing — all under one roof.',
+    overview: `Digital marketing comprises of a number of activities for the web apart from marketing and each and every activity needs to be executed with focus on the end users to ensure success.
 
-Our integrated approach means every channel reinforces the others, compounding your results over time.`,
+In Simple language, Digital marketing is the use of the Internet, mobile devices, social media, search engines, and other channels to reach consumers. We are Affordable Digital Marketing Services Company in India.
+
+Our Digital Marketing Services:
+(1) Social Media Marketing (SMM)
+(2) Search Engine Marketing (SEM)
+(3) Search Engine Optimization (SEO)
+(4) Social Media Optimization (SMO)
+(5) SMS & WhatsApp Marketing
+(6) Content & Email Marketing
+
+1. Social Media Marketing (SMM) -
+Social Media Marketing is the use of Social media platforms and websites to Promote a Product or Service.
+We Offer Following Social Media Marketing:
+(a) Facebook
+(b) Instagram
+(c) LinkedIn
+(d) Twitter
+(e) Pinterest
+(f) Quora
+
+2. Search Engine Marketing (SEM) -
+Search Engine marketing is the process of gaining traffic and visibility from search engines through both paid and unpaid efforts. We create compelling advertisements that will attract, engage and convert your customer.
+Paid Advertising Services:
+(a) Google Ads
+(b) Youtube Ads
+(c) Bing Ads
+
+Some common ways to purchase online advertisements:
+Cost Per Visitor (CPV)
+Cost Per Click (CPC)
+Cost Per View (CPV)
+Cost Per Engagement (CPE)
+Cost Per Lead (CPL)
+
+3. Search Engine Optimization (SEO) -
+SEO is a strategy which allows you to improve the visibility of your website on the search engine's and rank you higher. It helps drive huge amount of traffic to your website which can convert into high-value sales.
+
+4. Social Media Optimization (SMO) -
+Social media optimization (SMO) is the use of social media networks to manage and grow an organization's message and online presence. SMO can be used to increase Brand awareness of new products and services, connect with customers. In Simple Language: Handle All Social Media Accounts, Create Posts & Do Brand Promotion.
+
+5. SMS & WhatsApp Marketing -
+SMS marketing is Sending marketing messages by text message. WhatsApp marketing is a type of marketing, which implies promoting a brand through WhatsApp. WhatsApp Marketing is Currently Most Popular & Beneficial Marketing Method.
+
+6. Content & Email Marketing -
+Content marketing is a form of marketing focused on creating, publishing, and distributing content for a targeted audience online. Email marketing is the act of sending a commercial message. Effective marketing emails convert prospects into customers, and turn one-time Buyers into Permanent Buyers.`,
     types: [
       {
-        title: 'Social Media Marketing (SMM)',
-        desc: 'Paid advertising on Facebook, Instagram, LinkedIn, Twitter, and more to reach your target audience and generate leads.',
-        features: ['Facebook & Instagram Ads', 'LinkedIn Campaigns', 'YouTube Ads', 'Banner & Creative Design', 'A/B Ad Testing', 'Lead Generation', 'Audience Targeting', 'Retargeting Campaigns'],
+        title: 'SMM — Social Media Marketing',
+        price: '₹10,000/month (Only for Ads)',
+        desc: 'Social Media Marketing using Facebook, Instagram and other social platforms to promote your product or service and generate leads.',
+        features: ['Facebook Ads', 'Instagram Ads', '2 Platforms included', '₹6K Extra for Other Social Media', 'Banner Creation', 'Brand Promotion', 'Lead Generation'],
       },
       {
-        title: 'Search Engine Marketing (SEM)',
+        title: 'SMO — Social Media Optimization',
+        price: '₹16,000/month (SMM + SMO)',
+        desc: 'Managing and growing your social media presence organically — content, posting schedule, community engagement and brand awareness.',
+        features: ['Facebook Handling', 'Instagram Handling', 'Brand Awareness', '₹6K Extra for Other Social Media', 'Increase Likes/Followers', 'Banner Creation', 'Regular Content Posting'],
+      },
+      {
+        title: 'SEM — Search Engine Marketing (Google Ads)',
+        price: '₹14,000/month (Google Ads Package)',
         desc: 'Google Ads campaigns that put your business at the top of search results for high-intent keywords.',
-        features: ['Google Search Ads', 'Google Display Ads', 'Google Shopping Ads', 'Call-Only Ads', 'YouTube Ads', 'Bing Ads', 'Conversion Tracking', 'ROAS Optimisation'],
+        features: ['Google Search Ads', 'Google Display Ads', 'Call Ads', 'Lead Ads', 'Youtube Ads', 'Google My Business Ads'],
       },
       {
-        title: 'Social Media Optimisation (SMO)',
-        desc: 'Managing and growing your social media presence organically — content, posting schedule, community engagement.',
-        features: ['Account Setup & Branding', 'Content Calendar', 'Post Design & Copywriting', 'Hashtag Strategy', 'Community Management', 'Follower Growth', 'Brand Awareness', 'Story & Reel Creation'],
-      },
-      {
-        title: 'Content & Email Marketing',
-        desc: 'Blog posts, videos, and email sequences that attract, nurture, and convert your audience.',
-        features: ['Blog Writing & Publishing', 'Email Campaign Design', 'Newsletter Setup', 'Lead Magnet Creation', 'Drip Campaign Automation', 'Open Rate Optimisation'],
+        title: 'SEO — Search Engine Optimization',
+        price: '₹12,000/month (Organic Website Ranking)',
+        desc: 'Organic SEO to rank your website on the first page of Google. Includes both On-Page and Off-Page SEO activities.',
+        features: ['On-Page SEO', 'Off Page SEO', 'Increase Domain Rating', 'Get Organic Traffic', 'Rank in 1st Page', 'Pay Keywords Wise'],
       },
     ],
     deliverables: ['Channel Strategy Document', 'Ad Creative Design', 'Campaign Setup & Launch', 'Weekly Performance Reports', 'Monthly Strategy Review', 'Audience Research', 'Competitor Analysis', 'ROI Dashboard'],
     faqs: [
-      { q: 'Which platforms do you advertise on?', a: 'Facebook, Instagram, Google, YouTube, LinkedIn, Twitter/X, and more — based on where your customers actually spend time.' },
-      { q: 'What is the minimum ad budget?', a: 'We recommend a minimum ad spend of ₹10,000/month for meaningful results, separate from our management fee.' },
-      { q: 'How do you measure campaign success?', a: 'We track leads, cost per lead, ROAS, click-through rate, and revenue — not vanity metrics like impressions.' },
+      { q: 'What is Digital Marketing?', a: 'Digital marketing is the use of the Internet, mobile devices, social media, search engines, and other channels to reach consumers. It comprises of a number of activities for the web focused on the end users.' },
+      { q: 'What is Pricing for Social Media Marketing?', a: 'Our Social Media Service Plan starts from ₹10,000/month (only for Ads). SMM + SMO combo is ₹16,000/month.' },
+      { q: 'Can you Provide Google Ads Service?', a: 'Yes, we provide Google Ads Service. It comes under the category of SEM. Our Google Ads Service Plan is ₹14,000/month.' },
+      { q: 'What is Charge for SEO Service?', a: 'Our SEO Plan starts from ₹12,000/month for Full SEO (On-Page + Off-Page). On-Page only is ₹8,000.' },
     ],
   },
   {
-    id: 'app-development',
-    slug: '/services/app-development',
-    title: 'App Development',
-    tagline: 'Native & cross-platform apps your users will love.',
-    image: '/service-app-dev.png',
-    icon: 'Smartphone',
-    short: 'Android, iOS, and cross-platform mobile apps built for performance, scalability, and real user engagement.',
-    overview: `Mobile apps are no longer optional — they're how customers engage with businesses they love most. We build native and cross-platform mobile applications that are fast, intuitive, and built to solve real problems.
+    id: 'website-design',
+    startingPrice: 'From ₹7,999',
+    slug: '/services/website-design',
+    title: 'Website Design',
+    tagline: 'Websites that convert visitors into customers.',
+    image: '/service-website-design.png',
+    icon: 'LayoutTemplate',
+    short: 'Static, Dynamic, WordPress & E-commerce websites — mobile-friendly, fast-loading, and SEO-ready from day one.',
+    overview: `We offer following types of Website Design Services -
 
-From ideation to App Store launch, we handle the full development lifecycle, ensuring your app is production-ready and scalable from day one.`,
+(a) Static Website
+(b) Dynamic Website
+(c) AMP Website ( Fast Loading Sites )
+(d) WordPress / Blogger Website
+(e) E-Commerce Website
+
+Static Websites -
+Static Websites is used in small business. It is recommended for following business -
+(a) Institute & Coaching
+(b) Landing Page
+(c) Tour & Travel
+(d) RO Services
+(e) Salons / Parlour
+(f) All Type of Shop like Grocery, Electronics, Medicine
+(g) Construction
+(h) Pest Control
+(I) Personal Website
+(j) Singer & Artist
+(i) All type of Services
+
+Dynamic Websites -
+It is a collection of dynamic web pages whose content changes dynamically. It accesses content from a database or Content Management System (CMS). It uses client-side scripting or server-side scripting, or both to generate dynamic content. It is used in Medium & Large Business.
+
+AMP Websites -
+AMP stands for Accelerated Mobile Pages. AMP is optimised for mobile web browsing and intended to help webpages load faster.
+
+WordPress Websites -
+It Works on CMS (Content Management System). More than 50% Websites are Made on WordPress Platform. It is Very Easy to handle. Recommended for blogs and Small Business.`,
     types: [
       {
-        title: 'Android App Development',
-        desc: 'Native Android applications built with Kotlin/Java for the best possible performance and user experience on Android devices.',
-        features: ['Native Kotlin/Java', 'Material Design UI', 'Google Play Store Launch', 'Push Notifications', 'Firebase Integration', 'Offline Mode Support', 'In-App Purchases', 'Deep Linking'],
+        title: 'Static Website',
+        price: '₹7,999',
+        desc: 'Perfect for small businesses, institutes, salons, shops, personal portfolios, and local service providers. Fast, affordable, and zero maintenance.',
+        features: [
+          'Responsive Website',
+          'Free SEO',
+          'Mobile Friendly',
+          'Beautiful Design',
+          'Fast Loading',
+          'Live Chat Integration',
+          'Whatsapp Chat Button',
+          'Direct Call Button',
+          'Social Share Button',
+          'PopUp & CountDown',
+          'Payment Link',
+          'Analytics Integration',
+          'Search Engine Submission',
+          'No Maintenance',
+        ],
       },
       {
-        title: 'iOS App Development',
-        desc: 'Polished iOS apps built for iPhone and iPad, following Apple\'s Human Interface Guidelines.',
-        features: ['Swift / SwiftUI', 'Apple HIG Compliant', 'App Store Launch', 'Face ID / Touch ID', 'Apple Pay Integration', 'iCloud Sync', 'ARKit Support', 'TestFlight Beta'],
+        title: 'Dynamic Website',
+        price: '₹14,999',
+        desc: 'Ideal for medium and large businesses that need a CMS, login system, payment gateway, or e-commerce functionality.',
+        features: [
+          'All Static Features',
+          'CMS Panel',
+          'Login System',
+          'Payment Gateway Integration',
+          'Leads Generation',
+          'E-Commerce Setup',
+          'Live Chat Integration + Multiple Agent',
+          'SMS Integration',
+          'Contact Form',
+          'Full SEO',
+          'Unique Logo',
+          'Google Map Integration',
+          'Youtube Video Integration',
+          'Place Ads',
+        ],
       },
       {
-        title: 'Cross-Platform (React Native / Flutter)',
-        desc: 'Build once, deploy to both Android and iOS — cutting your development time and cost in half.',
-        features: ['React Native or Flutter', 'Single Codebase', 'Native-Like Performance', '80% Cost Saving vs Two Apps', 'Hot Reload Development', 'Platform-Specific UI Elements', 'Third-Party API Integration', 'OTA Updates'],
+        title: 'WordPress Website',
+        price: '₹9,999',
+        desc: 'Runs on the world\'s most popular CMS. Easy to manage, ideal for blogs, news portals, and small-to-medium businesses.',
+        features: [
+          '1200+ Premium Themes',
+          'Plugin Ecosystem',
+          'Easy Content Management',
+          'WooCommerce Ready',
+          'SEO Plugins',
+          'Regular Security Updates',
+          'Dynamic Website',
+          'Free SSL Certificate',
+          'Google & Bing Submission',
+          'Custom Editing',
+          'Contact Form',
+          'Chat Support',
+        ],
       },
       {
-        title: 'E-Commerce & On-Demand Apps',
-        desc: 'Specialised apps for online stores, delivery services, booking platforms, and on-demand marketplaces.',
-        features: ['Product Listing & Cart', 'Real-Time Order Tracking', 'Payment Gateway Integration', 'Rider/Vendor App', 'Admin Dashboard', 'Push Notification Alerts', 'Review & Rating System', 'Multi-Language Support'],
+        title: 'E-Commerce Website',
+        price: '₹19,999',
+        desc: 'WordPress/Shopify E-Commerce/Shopping Website Starting from ₹19,999. Fully functional online stores with product management, cart, checkout, and payment integration.',
+        features: [
+          'Product Catalogue',
+          'Shopping Cart & Checkout',
+          'Multiple Payment Gateways',
+          'Order Management',
+          'Discount & Coupon System',
+          'Mobile Commerce Ready',
+          'Free Domain',
+          'Free Hosting',
+          'Free SSL',
+          'Admin Panel',
+          'Custom Editing',
+          '1 Year Support',
+        ],
       },
     ],
-    deliverables: ['UI/UX Wireframes', 'App Design (Figma)', 'Frontend & Backend Development', 'API Integration', 'QA & Testing', 'App Store Submission', 'Post-Launch Support', 'Performance Monitoring'],
+    deliverables: ['UI/UX Design', 'Responsive Development', 'On-Page SEO', 'WhatsApp & Call Integration', 'Analytics Setup', 'Speed Optimisation', 'Google Search Console Submission', '1 Year Support'],
     faqs: [
-      { q: 'How long does it take to build an app?', a: 'A simple app takes 4–6 weeks. A complex app with custom backend can take 3–5 months. We\'ll give you a precise estimate after understanding your requirements.' },
-      { q: 'Do you build both Android and iOS?', a: 'Yes. We can build native apps for each platform or a cross-platform app using React Native or Flutter, which runs on both.' },
-      { q: 'Will you help submit to the App Store?', a: 'Yes — we handle the full submission process for both Google Play Store and Apple App Store, including screenshots and store listing copy.' },
-    ],
-  },
-  {
-    id: 'software-development',
-    slug: '/services/software-development',
-    title: 'Software Development',
-    tagline: 'Custom software built exactly for your business.',
-    image: '/service-software-dev.png',
-    icon: 'Code2',
-    short: 'Custom web applications, CRM, ERP, booking systems, and business automation software tailored to your exact workflow.',
-    overview: `Off-the-shelf software rarely fits your business perfectly. We design and build custom software solutions that match your exact processes, integrate with your existing tools, and grow with your organisation.
-
-Whether you need a CRM, an ERP, a booking system, or a completely bespoke business platform, we deliver maintainable, scalable code with clean documentation.`,
-    types: [
-      {
-        title: 'Web Application Development',
-        desc: 'Powerful browser-based applications for internal business operations, customer portals, or SaaS products.',
-        features: ['React / Next.js Frontend', 'Node.js / PHP / Python Backend', 'PostgreSQL / MySQL Database', 'REST & GraphQL APIs', 'Role-Based Access Control', 'Real-Time Features (WebSocket)', 'Third-Party Integrations', 'Cloud Deployment (AWS/GCP)'],
-      },
-      {
-        title: 'CRM & ERP Systems',
-        desc: 'Custom customer relationship management and enterprise resource planning tools built for your team\'s workflow.',
-        features: ['Lead & Pipeline Management', 'Customer Database', 'Inventory Management', 'Invoice & Billing', 'HR & Payroll Module', 'Reporting & Analytics', 'Multi-User with Roles', 'Email & SMS Notifications'],
-      },
-      {
-        title: 'Booking & Scheduling Systems',
-        desc: 'Online booking platforms for clinics, salons, tuition centres, hotels, and service businesses.',
-        features: ['Online Appointment Booking', 'Calendar Management', 'Automated Reminders', 'Payment Integration', 'Staff Management', 'Customer Login Portal', 'Admin Dashboard', 'Mobile Responsive'],
-      },
-      {
-        title: 'API Development & Integration',
-        desc: 'Building and connecting APIs to automate workflows between your website, apps, and third-party services.',
-        features: ['REST & GraphQL API Design', 'Payment API Integration', 'SMS & Email API', 'CRM Integrations', 'ERP Integrations', 'Webhook Setup', 'API Documentation', 'Security & Authentication'],
-      },
-    ],
-    deliverables: ['Requirements Document', 'System Architecture Design', 'Database Schema', 'Frontend & Backend Code', 'API Documentation', 'QA & UAT', 'Deployment & Hosting', '3 Months Post-Launch Support'],
-    faqs: [
-      { q: 'What technologies do you use?', a: 'We primarily use React, Next.js, Node.js, PHP, Python, and PostgreSQL/MySQL — choosing the best stack for your specific use case.' },
-      { q: 'Can you integrate with our existing software?', a: 'Yes. We have experience integrating with popular tools like Salesforce, HubSpot, Razorpay, Stripe, Shiprocket, and more via their APIs.' },
-      { q: 'Who owns the source code?', a: 'You do. Once the project is complete and payment is settled, full source code ownership transfers to you.' },
+      { q: 'How long does it take to build a website?', a: 'A static website typically takes 5–7 working days. A dynamic or e-commerce site takes 2–4 weeks depending on complexity.' },
+      { q: 'Will my website work on mobile?', a: 'Yes. Every website we build is fully responsive and tested across all screen sizes and browsers.' },
+      { q: 'Do you provide hosting?', a: 'Yes. Our Silver, Gold and Platinum plans include Free Domain and Hosting. We can also work with your existing hosting provider.' },
     ],
   },
   {
     id: 'whatsapp-marketing',
+    startingPrice: '₹0.20/SMS',
     slug: '/services/whatsapp-marketing',
     title: 'SMS & WhatsApp Marketing',
     tagline: 'Reach your customers where they actually read messages.',
     image: '/service-whatsapp.png',
     icon: 'MessageCircle',
-    short: 'Bulk SMS campaigns and WhatsApp Business API marketing with high open rates, instant delivery, and real conversion results.',
-    overview: `SMS has a 98% open rate and WhatsApp has over 500 million daily users in India alone. These channels cut through the noise that email and social media can't — your message gets read within minutes.
+    short: 'Bulk SMS campaigns and WhatsApp Business API marketing with 98% open rates, instant delivery, and real conversion results.',
+    overview: `SMS marketing is Sending marketing messages by text message.
+
+WhatsApp marketing is a type of marketing, which implies promoting a brand through WhatsApp. WhatsApp Marketing is Currently Most Popular & Beneficial Marketing Method.
+
+SMS has a 98% open rate and WhatsApp has over 500 million daily users in India alone. These channels cut through the noise that email and social media can't — your message gets read within minutes.
 
 We set up, manage, and optimise bulk SMS and WhatsApp marketing campaigns that drive actual enquiries, bookings, and sales for your business.`,
     types: [
       {
         title: 'Bulk SMS Marketing',
+        price: 'From ₹0.20/SMS',
         desc: 'Send promotional and transactional SMS messages to thousands of customers in seconds.',
         features: ['Promotional SMS Campaigns', 'Transactional SMS (OTP, Alerts)', 'DLT Registration', 'Custom Sender ID', 'Scheduled Campaigns', 'Delivery Reports', 'Opt-Out Management', 'CRM Integration'],
       },
       {
         title: 'WhatsApp Business API',
+        price: 'From ₹0.80/Msg',
         desc: 'Official WhatsApp Business API integration for automated, personalised messaging at scale.',
         features: ['Official Meta API Setup', 'Verified Business Account', 'Template Message Approval', 'Broadcast Campaigns', 'Two-Way Messaging', 'Chatbot Integration', 'Media Messages (Images, PDFs)', 'CRM Integration'],
       },
       {
         title: 'WhatsApp Automation & Chatbot',
+        price: 'From ₹5,000',
         desc: 'Automate customer conversations, qualify leads, and answer FAQs without human intervention.',
         features: ['Keyword-Triggered Responses', 'Lead Qualification Flow', 'Product Catalogue Sharing', 'Appointment Booking via WhatsApp', 'Order Status Updates', 'Feedback Collection', 'Multi-Agent Inbox', 'Analytics Dashboard'],
       },
       {
         title: 'Campaign Strategy & Copywriting',
+        price: 'Custom Pricing',
         desc: 'We don\'t just send messages — we craft campaigns designed to get responses and conversions.',
         features: ['Audience Segmentation', 'Message Copywriting', 'A/B Testing', 'Timing Optimisation', 'Festival & Sale Campaigns', 'Re-Engagement Campaigns', 'Performance Analytics', 'Monthly Reporting'],
       },
