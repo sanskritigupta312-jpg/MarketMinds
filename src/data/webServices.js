@@ -6,7 +6,7 @@
 export const webServices = [
   {
     id: 'seo-services',
-    startingPrice: 'From ₹8,000',
+    startingPrice: 'From ₹5,000',
     slug: '/services/seo-services',
     title: 'SEO Services',
     tagline: 'Rank higher. Get found. Grow organically.',
@@ -54,19 +54,19 @@ Google My Business (GMB) SEO refers to the strategies and practices used to opti
     types: [
       {
         title: 'On-Page SEO',
-        price: '₹8,000',
+        price: '₹6,000',
         desc: 'On-page SEO relates to the content on your website. It includes strategies to optimize an individual page on a website. It refers all the measures that can be taken directly within your website to improve its position in the search rankings.',
         features: ['Meta Tag Optimization', 'Meta Description', 'Image & Hyperlink Optimization', 'Content Optimization', 'Keyword Optimization', 'Title Tag Optimization', 'Internal Linking', 'Header Tags Optimization', 'Footer Optimization', 'Xml Sitemap Creation', 'Robots.Txt Creation'],
       },
       {
         title: 'Full SEO (On-Page + Off-Page)',
-        price: '₹12,000/month',
+        price: '₹10,000/month',
         desc: 'Off-Page SEO help strengthen the influence and relationship your website has with other Blog/Websites. It includes strategies to build a website\'s reputation and authority.',
         features: ['All On-Page SEO Activity', 'Social Bookmarking', 'Article & Blog Submission', 'Directory Submission', 'Q & A Submissions', 'Web 2.0 Creation', 'Page Speed Optimization', 'Google & Bing Webmaster Tools Set Up', 'Google Analytics Set Up', 'Search Engine Rank Report', 'Spam Score Check', 'Other Off Page Activity'],
       },
       {
         title: 'GMB SEO (Local SEO)',
-        price: '₹10,000/month',
+        price: '₹5,000/month',
         desc: 'Google My Business (GMB) SEO refers to the strategies and practices used to optimize your Google My Business listing to improve its visibility in local search results.',
         features: ['Profile Management', 'Regular Posts and Updates', 'Customer Reviews Management', 'High Quality Photo Updates', 'High-Quality Visual Content', 'Business Description Updates', 'Services Updates', 'Local Citations and Backlinks'],
       },
@@ -80,7 +80,7 @@ Google My Business (GMB) SEO refers to the strategies and practices used to opti
   },
   {
     id: 'digital-marketing',
-    startingPrice: 'From ₹10,000/mo',
+    startingPrice: 'From ₹6,000/mo',
     slug: '/services/digital-marketing',
     title: 'Digital Marketing',
     tagline: 'Reach more customers across every digital channel.',
@@ -137,25 +137,25 @@ Content marketing is a form of marketing focused on creating, publishing, and di
     types: [
       {
         title: 'SMM — Social Media Marketing',
-        price: '₹10,000/month (Only for Ads)',
+        price: '₹8,000/month (Only for Ads)',
         desc: 'Social Media Marketing using Facebook, Instagram and other social platforms to promote your product or service and generate leads.',
         features: ['Facebook Ads', 'Instagram Ads', '2 Platforms included', '₹6K Extra for Other Social Media', 'Banner Creation', 'Brand Promotion', 'Lead Generation'],
       },
       {
         title: 'SMO — Social Media Optimization',
-        price: '₹16,000/month (SMM + SMO)',
+        price: '₹8,000/month (SMM + SMO)',
         desc: 'Managing and growing your social media presence organically — content, posting schedule, community engagement and brand awareness.',
         features: ['Facebook Handling', 'Instagram Handling', 'Brand Awareness', '₹6K Extra for Other Social Media', 'Increase Likes/Followers', 'Banner Creation', 'Regular Content Posting'],
       },
       {
         title: 'SEM — Search Engine Marketing (Google Ads)',
-        price: '₹14,000/month (Google Ads Package)',
+        price: '₹8,000/month (Google Ads Package)',
         desc: 'Google Ads campaigns that put your business at the top of search results for high-intent keywords.',
         features: ['Google Search Ads', 'Google Display Ads', 'Call Ads', 'Lead Ads', 'Youtube Ads', 'Google My Business Ads'],
       },
       {
         title: 'SEO — Search Engine Optimization',
-        price: '₹12,000/month (Organic Website Ranking)',
+        price: '₹10,000/month (Organic Website Ranking)',
         desc: 'Organic SEO to rank your website on the first page of Google. Includes both On-Page and Off-Page SEO activities.',
         features: ['On-Page SEO', 'Off Page SEO', 'Increase Domain Rating', 'Get Organic Traffic', 'Rank in 1st Page', 'Pay Keywords Wise'],
       },
@@ -296,53 +296,4 @@ It Works on CMS (Content Management System). More than 50% Websites are Made on 
       { q: 'Do you provide hosting?', a: 'Yes. Our Silver, Gold and Platinum plans include Free Domain and Hosting. We can also work with your existing hosting provider.' },
     ],
   },
-  {
-    id: 'whatsapp-marketing',
-    startingPrice: '₹0.20/SMS',
-    slug: '/services/whatsapp-marketing',
-    title: 'SMS & WhatsApp Marketing',
-    tagline: 'Reach your customers where they actually read messages.',
-    image: '/service-whatsapp.png',
-    icon: 'MessageCircle',
-    short: 'Bulk SMS campaigns and WhatsApp Business API marketing with 98% open rates, instant delivery, and real conversion results.',
-    overview: `SMS marketing is Sending marketing messages by text message.
-
-WhatsApp marketing is a type of marketing, which implies promoting a brand through WhatsApp. WhatsApp Marketing is Currently Most Popular & Beneficial Marketing Method.
-
-SMS has a 98% open rate and WhatsApp has over 500 million daily users in India alone. These channels cut through the noise that email and social media can't — your message gets read within minutes.
-
-We set up, manage, and optimise bulk SMS and WhatsApp marketing campaigns that drive actual enquiries, bookings, and sales for your business.`,
-    types: [
-      {
-        title: 'Bulk SMS Marketing',
-        price: 'From ₹0.20/SMS',
-        desc: 'Send promotional and transactional SMS messages to thousands of customers in seconds.',
-        features: ['Promotional SMS Campaigns', 'Transactional SMS (OTP, Alerts)', 'DLT Registration', 'Custom Sender ID', 'Scheduled Campaigns', 'Delivery Reports', 'Opt-Out Management', 'CRM Integration'],
-      },
-      {
-        title: 'WhatsApp Business API',
-        price: 'From ₹0.80/Msg',
-        desc: 'Official WhatsApp Business API integration for automated, personalised messaging at scale.',
-        features: ['Official Meta API Setup', 'Verified Business Account', 'Template Message Approval', 'Broadcast Campaigns', 'Two-Way Messaging', 'Chatbot Integration', 'Media Messages (Images, PDFs)', 'CRM Integration'],
-      },
-      {
-        title: 'WhatsApp Automation & Chatbot',
-        price: 'From ₹5,000',
-        desc: 'Automate customer conversations, qualify leads, and answer FAQs without human intervention.',
-        features: ['Keyword-Triggered Responses', 'Lead Qualification Flow', 'Product Catalogue Sharing', 'Appointment Booking via WhatsApp', 'Order Status Updates', 'Feedback Collection', 'Multi-Agent Inbox', 'Analytics Dashboard'],
-      },
-      {
-        title: 'Campaign Strategy & Copywriting',
-        price: 'Custom Pricing',
-        desc: 'We don\'t just send messages — we craft campaigns designed to get responses and conversions.',
-        features: ['Audience Segmentation', 'Message Copywriting', 'A/B Testing', 'Timing Optimisation', 'Festival & Sale Campaigns', 'Re-Engagement Campaigns', 'Performance Analytics', 'Monthly Reporting'],
-      },
-    ],
-    deliverables: ['Account Setup & DLT Registration', 'WhatsApp Business API Integration', 'Campaign Strategy', 'Message Templates', 'Contact List Management', 'Scheduled Campaign Execution', 'Delivery & Open Reports', 'Monthly Performance Review'],
-    faqs: [
-      { q: 'Is bulk WhatsApp marketing legal?', a: 'Yes, via the official WhatsApp Business API through Meta\'s approved platform. We only use the official API — not unofficial bulk tools that can get your number banned.' },
-      { q: 'How many messages can I send?', a: 'With the official API, you can send to unlimited contacts (subject to WhatsApp\'s quality rating system). We help you maintain a high quality score.' },
-      { q: 'What is the cost per message?', a: 'WhatsApp charges per conversation (24-hour window). SMS costs depend on the operator and volume. We\'ll give you a detailed cost breakdown before we start.' },
-    ],
-  },
-];
+]; 
