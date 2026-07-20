@@ -14,8 +14,8 @@ export default function ServicesGrid({ limit, showHeading = true, showCta = true
         <div className="mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
             eyebrow="What we do"
-            title="Full-service, but never scattered."
-            description="Six disciplines, one senior team. We only take on the parts of a brand's growth we can genuinely be excellent at."
+            title="Full-service digital marketing, done right."
+            description="Nine disciplines, one senior team — from SEO and paid advertising to social media marketing, lead generation and web development in Lucknow and beyond."
           />
           {showCta && (
             <RevealOnScroll delay={0.15}>

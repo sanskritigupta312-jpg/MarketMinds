@@ -18,7 +18,7 @@ export default function Home() {
       />
       <Hero />
       <MarqueeStrip />
-      <ServicesGrid limit={6} />
+      <ServicesGrid />
       <FounderSpotlight />
       <WhyUs />
       <Testimonials />

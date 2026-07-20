@@ -25,7 +25,7 @@ const items = [
     icon: MapPin,
     label: 'Find us',
     value: brand.address,
-    href: brand.gmbUrl,
+    href: 'https://www.google.com/maps?q=26.847336787556667,80.94764707300212',
   },
 ];
 

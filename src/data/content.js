@@ -31,6 +31,7 @@ export const brand = {
 export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
+  { label: 'Pricing', to: '/pricing' },
   { label: 'Approach', to: '/work' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },

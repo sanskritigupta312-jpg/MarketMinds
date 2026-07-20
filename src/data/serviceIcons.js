@@ -1,6 +1,16 @@
 // Explicit imports (rather than `import * as Icons`) so bundlers can
 // tree-shake unused icons out of the production build.
-import { Compass, LayoutTemplate, TrendingUp, Target, Sparkles, BarChart3 } from 'lucide-react';
+import {
+  Compass,
+  LayoutTemplate,
+  TrendingUp,
+  Target,
+  Sparkles,
+  BarChart3,
+  Smartphone,
+  Code2,
+  MessageCircle,
+} from 'lucide-react';
 
 export const serviceIcons = {
   Compass,
@@ -9,4 +19,7 @@ export const serviceIcons = {
   Target,
   Sparkles,
   BarChart3,
+  Smartphone,
+  Code2,
+  MessageCircle,
 };

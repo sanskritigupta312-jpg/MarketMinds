@@ -8,6 +8,7 @@ const budgets = ['Under ₹50k / mo', '₹50k – ₹1.5L / mo', '₹1.5L – �
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', budget: budgets[0], message: '', website: '' });
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [fallbackHref, setFallbackHref] = useState('');
   const submitted = status === 'sent';
 
   function handleChange(e) {
@@ -40,23 +41,43 @@ export default function ContactForm() {
 
     const isKeySet = brand.web3formsAccessKey && brand.web3formsAccessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY';
 
+    if (!isKeySet) {
+      // This is the #1 cause of the form "never" sending via Web3Forms —
+      // every submission skips straight to the mailto fallback below.
+      // Get a free key at https://web3forms.com and set it as
+      // brand.web3formsAccessKey to fix this.
+      console.warn('[ContactForm] brand.web3formsAccessKey is missing or still the placeholder value — submissions will always fall back to mailto instead of sending via Web3Forms.');
+    }
+
     try {
       if (!isKeySet) throw new Error('Access key not configured');
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       });
+      clearTimeout(timeoutId);
+
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.message || 'Submission failed');
       setStatus('sent');
-    } catch {
-      // Fallback so a broken key or network hiccup never loses an enquiry.
+    } catch (err) {
+      // Fallback so a broken key, timeout, or network hiccup never loses an
+      // enquiry. We both attempt an automatic redirect AND keep the link
+      // around to render below, since the automatic redirect does nothing
+      // visible on machines with no default mail client configured.
       const subject = encodeURIComponent(payload.subject);
       const body = encodeURIComponent(
         `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nCompany: ${form.company}\nBudget: ${form.budget}\n\nMessage:\n${form.message}`
       );
-      window.location.href = `mailto:${brand.email}?subject=${subject}&body=${body}`;
+      const mailtoHref = `mailto:${brand.email}?subject=${subject}&body=${body}`;
+      setFallbackHref(mailtoHref);
+      window.location.href = mailtoHref;
       setStatus('error');
     }
   }
@@ -101,7 +122,11 @@ export default function ContactForm() {
         <div className="flex items-start gap-3 rounded-xl border border-gold-500/30 bg-gold-500/10 px-4 py-3 text-sm text-charcoal dark:text-ivory">
           <AlertCircle size={18} className="mt-0.5 shrink-0 text-gold-600 dark:text-gold-400" />
           <span>
-            Couldn't reach our form service, so we opened a pre-filled email instead — just hit send there.
+            Couldn't reach our form service, so we tried opening a pre-filled email for you. Nothing pop up?{' '}
+            <a href={fallbackHref} className="underline decoration-gold-500 underline-offset-2 hover:text-gold-500">
+              Click here to email us directly
+            </a>
+            .
           </span>
         </div>
       )}
