@@ -70,7 +70,7 @@ export const pricingCategories = [
     plans: [
       {
         name: 'SMM',
-        price: '₹10,000/month',
+        price: '₹8,000/month',
         features: [
           'Only for Ads',
           'Facebook Ads',
@@ -84,7 +84,7 @@ export const pricingCategories = [
       },
       {
         name: 'SMO',
-        price: '₹16,000/month',
+        price: '₹8,000/month',
         popular: true,
         features: [
           'SMM + SMO Combo',
@@ -99,7 +99,7 @@ export const pricingCategories = [
       },
       {
         name: 'SEM',
-        price: '₹14,000/month',
+        price: '₹8,000/month',
         features: [
           'Google Ads Package',
           'Google Search Ads',
@@ -112,7 +112,7 @@ export const pricingCategories = [
       },
       {
         name: 'SEO',
-        price: '₹12,000/month',
+        price: '₹10,000/month',
         features: [
           'Organic Website Ranking',
           'On-Page SEO',
