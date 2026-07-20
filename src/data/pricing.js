@@ -13,7 +13,7 @@ export const pricingCategories = [
     plans: [
       {
         name: 'On-Page SEO',
-        price: '₹8,000',
+        price: '₹6,000',
         features: [
           'Meta Tag Optimization',
           'Meta Description',
@@ -30,7 +30,7 @@ export const pricingCategories = [
       },
       {
         name: 'Full SEO',
-        price: '₹12,000/month',
+        price: '₹10,000/month',
         popular: true,
         features: [
           'All On-Page SEO Activity',
@@ -49,7 +49,7 @@ export const pricingCategories = [
       },
       {
         name: 'GMB SEO (Local SEO)',
-        price: '₹10,000/month',
+        price: '₹5,000/month',
         features: [
           'Profile Management',
           'Regular Posts and Updates',
