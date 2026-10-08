@@ -13,7 +13,7 @@
       name="description"
       content="MarketMinds is a full-service digital agency crafting brand, web and performance marketing strategies that turn attention into growth. Led by Dhruv Verma."
     />
-    <meta name="keywords" content="digital marketing agency, SEO services India, web design, performance marketing, brand strategy, social media marketing" />
+    <link rel="canonical" href="https://market-minds-phi.vercel.app/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -23,9 +23,7 @@
       content="Brand, web and performance marketing, crafted with intention. MarketMinds turns attention into growth."
     />
     <meta property="og:site_name" content="MarketMinds" />
-    <!-- NOTE: Update SITE_URL in src/config/site.js and set VITE_SITE_URL env var before switching domains -->
     <meta property="og:url" content="https://market-minds-phi.vercel.app/" />
-    <!-- og:image must be an absolute URL at 1200×630. Create /public/og-image.png then update this. -->
     <meta property="og:image" content="https://market-minds-phi.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -36,11 +34,11 @@
     <meta name="twitter:description" content="Brand, web and performance marketing, crafted with intention." />
     <meta name="twitter:image" content="https://market-minds-phi.vercel.app/og-image.png" />
 
-    <!-- Fonts: Fraunces (display), Inter (body), Space Mono (labels/data) -->
+    <!-- Optimized Fonts: Fraunces (400, 500, 600), Inter (400, 500, 600), Space Mono (400, 700) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="manifest" href="/site.webmanifest" />
@@ -67,9 +65,15 @@
         "name": "MarketMinds",
         "description": "Digital marketing and growth agency offering brand strategy, web design & development, SEO, performance marketing, social & content, and analytics.",
         "url": "https://market-minds-phi.vercel.app",
+        "logo": "https://market-minds-phi.vercel.app/favicon-512.png",
+        "image": "https://market-minds-phi.vercel.app/og-image.png",
         "telephone": "+918707858634",
         "email": "marketmindsenquiry@gmail.com",
-        "founder": { "@type": "Person", "name": "Dhruv Verma" },
+        "founder": {
+          "@type": "Person",
+          "name": "Dhruv Verma",
+          "url": "https://dhruv-portfolio-one-tau.vercel.app/"
+        },
         "areaServed": "Worldwide",
         "priceRange": "₹₹",
         "sameAs": [
@@ -83,4 +87,3 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-

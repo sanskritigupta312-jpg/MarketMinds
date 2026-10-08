@@ -5,6 +5,9 @@
   "description": "MarketMinds — digital marketing & growth agency website. React + Tailwind CSS + Framer Motion.",
   "author": "Dhruv Verma",
   "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, AlertCircle, ShieldCheck } from 'lucide-react';
 import { brand } from '../../data/content';
 
 const budgets = ['Under ₹50k / mo', '₹50k – ₹1.5L / mo', '₹1.5L – ₹5L / mo', '₹5L+ / mo'];
@@ -42,10 +43,6 @@ export default function ContactForm() {
     const isKeySet = brand.web3formsAccessKey && brand.web3formsAccessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY';
 
     if (!isKeySet) {
-      // This is the #1 cause of the form "never" sending via Web3Forms —
-      // every submission skips straight to the mailto fallback below.
-      // Get a free key at https://web3forms.com and set it as
-      // brand.web3formsAccessKey to fix this.
       console.warn('[ContactForm] brand.web3formsAccessKey is missing or still the placeholder value — submissions will always fall back to mailto instead of sending via Web3Forms.');
     }
 
@@ -67,10 +64,6 @@ export default function ContactForm() {
       if (!res.ok || !data.success) throw new Error(data.message || 'Submission failed');
       setStatus('sent');
     } catch {
-      // Fallback so a broken key, timeout, or network hiccup never loses an
-      // enquiry. We both attempt an automatic redirect AND keep the link
-      // around to render below, since the automatic redirect does nothing
-      // visible on machines with no default mail client configured.
       const subject = encodeURIComponent(payload.subject);
       const body = encodeURIComponent(
         `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nCompany: ${form.company}\nBudget: ${form.budget}\n\nMessage:\n${form.message}`
@@ -177,10 +170,20 @@ export default function ContactForm() {
         />
       </div>
 
-      <button type="submit" disabled={status === 'sending'} className="btn-primary mt-2 w-fit disabled:cursor-wait disabled:opacity-60">
-        {status === 'sending' ? 'Sending…' : 'Send message'}
-        {status !== 'sending' && <ArrowUpRight size={16} />}
-      </button>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+        <button type="submit" disabled={status === 'sending'} className="btn-primary w-fit disabled:cursor-wait disabled:opacity-60">
+          {status === 'sending' ? 'Sending…' : 'Send message'}
+          {status !== 'sending' && <ArrowUpRight size={16} />}
+        </button>
+        <p className="flex items-center gap-1.5 text-[11px] text-charcoal-muted dark:text-ivory-muted">
+          <ShieldCheck size={14} className="text-gold-500 shrink-0" />
+          By submitting, you agree to our{' '}
+          <Link to="/privacy-policy" className="text-gold-600 dark:text-gold-400 hover:underline">
+            Privacy Policy
+          </Link>
+          .
+        </p>
+      </div>
     </form>
   );
 }
