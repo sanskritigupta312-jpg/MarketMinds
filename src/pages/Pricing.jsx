@@ -6,11 +6,17 @@ import SectionHeading from '../components/ui/SectionHeading';
 import Accordion from '../components/ui/Accordion';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
 import PageTransition from '../components/layout/PageTransition';
+import Seo from '../components/Seo';
 import { pricingIntro, pricingFaqs } from '../data/pricing';
 
 export default function Pricing() {
   return (
     <PageTransition>
+      <Seo
+        title="Pricing"
+        description="Transparent pricing for SEO, digital marketing, web design and WordPress packages. No surprise invoices — see exactly what's included, tier by tier."
+        path="/pricing"
+      />
       <PageHero
         eyebrow={pricingIntro.eyebrow}
         title={pricingIntro.title}

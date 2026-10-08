@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import PageTransition from "../components/layout/PageTransition";
+import Seo from "../components/Seo";
 
 export default function NotFound() {
   return (

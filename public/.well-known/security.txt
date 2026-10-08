@@ -1,0 +1,8 @@
+# Security policy for MarketMinds
+# https://market-minds-phi.vercel.app/.well-known/security.txt
+
+Contact: mailto:marketmindsenquiry@gmail.com
+Expires: 2027-10-08T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://market-minds-phi.vercel.app/.well-known/security.txt
+Policy: https://market-minds-phi.vercel.app/privacy-policy

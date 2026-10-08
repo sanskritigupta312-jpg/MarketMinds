@@ -10,7 +10,7 @@ export default function FloatingButtons() {
   const waHref = `https://wa.me/${brand.whatsappNumber}?text=${encodeURIComponent(
     brand.whatsappDefaultMessage
   )}`;
-  const callHref = `tel:+918707858634`;
+  const callHref = `tel:${brand.phoneHref}`;
 
   return (
     <div className="fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-50 flex flex-col items-end gap-4">

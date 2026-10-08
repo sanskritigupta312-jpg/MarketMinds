@@ -5,6 +5,8 @@ import RevealOnScroll from '../ui/RevealOnScroll';
 import SectionHeading from '../ui/SectionHeading';
 import { webServices } from '../../data/webServices';
 import { serviceIcons } from '../../data/serviceIcons';
+import { brand } from '../../data/content';
+
 
 const ACCENT_COLORS = [
   'from-violet-500/20 to-purple-500/5 border-violet-500/20',
@@ -139,11 +141,11 @@ export default function ServicesCardGrid({ showHeading = true }) {
                         <ArrowUpRight size={14} />
                       </Link>
                       <a
-                        href="tel:+918707858634"
+                        href={`tel:${brand.phoneHref}`}
                         className="inline-flex items-center gap-2 rounded-xl border border-charcoal/15 dark:border-ivory/15 px-5 py-3 font-mono text-[12px] uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted transition-all duration-300 hover:border-gold-500/50 hover:text-gold-500"
                       >
                         <Phone size={13} />
-                        +91 870 785 8634
+                        {brand.phoneDisplay}
                       </a>
                     </div>
                   </div>
@@ -165,11 +167,11 @@ export default function ServicesCardGrid({ showHeading = true }) {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="tel:+918707858634"
+              href={`tel:${brand.phoneHref}`}
               className="inline-flex items-center gap-2 rounded-xl bg-gold-gradient px-6 py-3 font-mono text-[12px] uppercase tracking-widest text-ink font-bold shadow-md hover:shadow-gold-500/30 transition-all"
             >
               <Phone size={14} />
-              Call Now — +91 870 785 8634
+              Call Now — {brand.phoneDisplay}
             </a>
             <a
               href="https://wa.me/918707858634?text=Hello%2C%20I%20am%20interested%20in%20your%20services."

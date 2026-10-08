@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PageTransition from '../components/layout/PageTransition';
 import CTASection from '../components/sections/CTASection';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
+import Seo from '../components/Seo';
 import { webServices } from '../data/webServices';
 import { serviceIcons } from '../data/serviceIcons';
 import PricingCard from '../components/ui/PricingCard';
@@ -53,6 +54,11 @@ export default function ServiceDetail() {
 
   return (
     <PageTransition>
+      <Seo
+        title={service.title}
+        description={service.short}
+        path={`/services/${service.id}`}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-gold-500/10 blur-[140px]" />

@@ -1,11 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { brand } from '../data/content';
+import { SITE_URL, OG_IMAGE } from '../config/site';
 
-const SITE_URL = 'https://market-minds-phi.vercel.app'; // TODO: replace with your final custom domain
-// TODO: this is a placeholder — design a real 1200×630 social share image
-// (logo + tagline on the ink/gold background) and drop it in /public/og-image.png,
-// then swap this back to `${SITE_URL}/og-image.png`.
-const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon-512.png`;
+const DEFAULT_OG_IMAGE = OG_IMAGE;
 
 /**
  * Drop this at the top of every page component to control that page's

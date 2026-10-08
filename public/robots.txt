@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /privacy-policy
+Disallow: /terms
+Disallow: /refund-policy
 
-Sitemap: https://market-minds-phi.vercel.app/sitemap.xml
+# Update this URL when you switch to your custom domain (matches VITE_SITE_URL in .env.production)
+Sitemap: https://market-minds-phi.vercel.app/sitemap.xml

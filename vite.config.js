@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
+    // Do NOT ship source maps to production — they expose original source in browser DevTools
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks(id) {

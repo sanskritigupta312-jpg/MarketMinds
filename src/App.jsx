@@ -10,6 +10,9 @@ const Pricing      = lazy(() => import('./pages/Pricing'));
 const Work         = lazy(() => import('./pages/Work'));
 const Contact      = lazy(() => import('./pages/Contact'));
 const NotFound     = lazy(() => import('./pages/NotFound'));
+const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
+const Terms        = lazy(() => import('./pages/legal/Terms'));
+const RefundPolicy = lazy(() => import('./pages/legal/RefundPolicy'));
 
 export default function App() {
   return (
@@ -23,6 +26,9 @@ export default function App() {
           <Route path="/pricing"                       element={<Pricing />} />
           <Route path="/work"                          element={<Work />} />
           <Route path="/contact"                       element={<Contact />} />
+          <Route path="/privacy-policy"                element={<PrivacyPolicy />} />
+          <Route path="/terms"                         element={<Terms />} />
+          <Route path="/refund-policy"                 element={<RefundPolicy />} />
           <Route path="*"                              element={<NotFound />} />
         </Route>
       </Routes>

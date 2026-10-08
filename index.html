@@ -6,25 +6,35 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0B0B0D" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content" />
 
     <title>MarketMinds — Digital Marketing &amp; Growth Agency</title>
     <meta
       name="description"
       content="MarketMinds is a full-service digital agency crafting brand, web and performance marketing strategies that turn attention into growth. Led by Dhruv Verma."
     />
+    <meta name="keywords" content="digital marketing agency, SEO services India, web design, performance marketing, brand strategy, social media marketing" />
 
     <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="MarketMinds — Digital Marketing & Growth Agency"
-    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MarketMinds — Digital Marketing &amp; Growth Agency" />
     <meta
       property="og:description"
       content="Brand, web and performance marketing, crafted with intention. MarketMinds turns attention into growth."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/favicon-512.png" />
+    <meta property="og:site_name" content="MarketMinds" />
+    <!-- NOTE: Update SITE_URL in src/config/site.js and set VITE_SITE_URL env var before switching domains -->
+    <meta property="og:url" content="https://market-minds-phi.vercel.app/" />
+    <!-- og:image must be an absolute URL at 1200×630. Create /public/og-image.png then update this. -->
+    <meta property="og:image" content="https://market-minds-phi.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MarketMinds — Digital Marketing &amp; Growth Agency" />
+    <meta name="twitter:description" content="Brand, web and performance marketing, crafted with intention." />
+    <meta name="twitter:image" content="https://market-minds-phi.vercel.app/og-image.png" />
 
     <!-- Fonts: Fraunces (display), Inter (body), Space Mono (labels/data) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,9 +67,14 @@
         "name": "MarketMinds",
         "description": "Digital marketing and growth agency offering brand strategy, web design & development, SEO, performance marketing, social & content, and analytics.",
         "url": "https://market-minds-phi.vercel.app",
+        "telephone": "+918707858634",
+        "email": "marketmindsenquiry@gmail.com",
         "founder": { "@type": "Person", "name": "Dhruv Verma" },
         "areaServed": "Worldwide",
-        "sameAs": ["https://www.instagram.com/market.minds001"]
+        "priceRange": "₹₹",
+        "sameAs": [
+          "https://www.instagram.com/market.minds001"
+        ]
       }
     </script>
   </head>
@@ -68,3 +83,4 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
