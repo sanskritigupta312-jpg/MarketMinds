@@ -66,7 +66,7 @@ export default function ContactForm() {
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.message || 'Submission failed');
       setStatus('sent');
-    } catch (err) {
+    } catch {
       // Fallback so a broken key, timeout, or network hiccup never loses an
       // enquiry. We both attempt an automatic redirect AND keep the link
       // around to render below, since the automatic redirect does nothing

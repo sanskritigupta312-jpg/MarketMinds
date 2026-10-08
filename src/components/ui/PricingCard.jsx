@@ -1,6 +1,6 @@
-import { Check, X, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Check, X } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
+import { brand } from '../../data/content';
 
 export default function PricingCard({ plan, delay = 0 }) {
   const { name, price, popular, features } = plan;
@@ -51,7 +51,7 @@ export default function PricingCard({ plan, delay = 0 }) {
 
         <div className="mt-auto pt-4">
           <a
-            href="tel:+918707858634"
+            href={`tel:${brand.phoneHref}`}
             className={popular ? 'btn-primary w-full justify-center' : 'btn-outline w-full justify-center'}
           >
             Call Now

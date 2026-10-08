@@ -4,7 +4,7 @@ import { pricingCategories, pricingFootnote } from '../../data/pricing';
 export default function PricingTabs() {
   return (
     <div className="flex flex-col gap-24 py-8">
-      {pricingCategories.map((cat, idx) => (
+      {pricingCategories.map((cat) => (
         <section key={cat.id} className="section-pad">
           <div className="mb-12 text-center">
             <h2 className="font-display text-4xl text-charcoal dark:text-ivory mb-4">

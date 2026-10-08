@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   FileText,
   ShieldCheck,
-  CheckCircle2,
-  Mail,
   ArrowLeft,
   ArrowUpRight,
   RotateCcw,
   Briefcase,
   Layers,
-  Scale,
   CreditCard,
-  AlertTriangle,
 } from 'lucide-react';
 import PageTransition from '../../components/layout/PageTransition';
 import Seo from '../../components/Seo';

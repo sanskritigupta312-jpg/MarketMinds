@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageTransition from '../components/layout/PageTransition';

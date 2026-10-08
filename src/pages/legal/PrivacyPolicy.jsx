@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   ShieldCheck,
-  Lock,
-  Eye,
   Mail,
   ArrowLeft,
   ArrowUpRight,
@@ -12,8 +9,6 @@ import {
   RotateCcw,
   CheckCircle2,
   Server,
-  KeyRound,
-  ExternalLink,
 } from 'lucide-react';
 import PageTransition from '../../components/layout/PageTransition';
 import Seo from '../../components/Seo';

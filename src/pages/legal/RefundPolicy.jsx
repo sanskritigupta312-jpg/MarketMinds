@@ -1,19 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   RotateCcw,
   ShieldCheck,
   CheckCircle2,
-  Mail,
   ArrowLeft,
   ArrowUpRight,
   FileText,
-  CreditCard,
   Ban,
   Clock,
-  HelpCircle,
-  Sparkles,
+  Mail,
 } from 'lucide-react';
 import PageTransition from '../../components/layout/PageTransition';
 import Seo from '../../components/Seo';
