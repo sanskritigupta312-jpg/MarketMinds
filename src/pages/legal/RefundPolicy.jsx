@@ -1,99 +1,371 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {
+  RotateCcw,
+  ShieldCheck,
+  CheckCircle2,
+  Mail,
+  ArrowLeft,
+  ArrowUpRight,
+  FileText,
+  CreditCard,
+  Ban,
+  Clock,
+  HelpCircle,
+  Sparkles,
+} from 'lucide-react';
 import PageTransition from '../../components/layout/PageTransition';
-import PageHero from '../../components/sections/PageHero';
 import Seo from '../../components/Seo';
 import { brand } from '../../data/content';
-import { RotateCcw, CheckCircle2, ShieldCheck, Mail } from 'lucide-react';
+
+const sections = [
+  { id: 'retainers', number: '01', title: 'Monthly Retainers' },
+  { id: 'projects', number: '02', title: 'Milestone Projects' },
+  { id: 'adspend', number: '03', title: 'Third-Party Ad Spend' },
+  { id: 'revisions', number: '04', title: 'Revisions & Quality' },
+  { id: 'cancellation', number: '05', title: 'Cancellation Steps' },
+  { id: 'disputes', number: '06', title: 'Dispute Resolution' },
+  { id: 'billing', number: '07', title: 'Billing Support' },
+];
 
 export default function RefundPolicy() {
+  const [activeSection, setActiveSection] = useState('retainers');
+
+  function scrollToSection(id) {
+    setActiveSection(id);
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -100;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
   return (
     <PageTransition>
       <Seo
         title="Refund & Cancellation Policy"
-        description={`Refund and cancellation policy for ${brand.name} services, projects, and retainers.`}
+        description={`Refund and cancellation policy for ${brand.name}. Transparent guidelines for retainer cycles, project milestones, and media spend.`}
         path="/refund-policy"
       />
-      <PageHero
-        eyebrow="Legal"
-        title="Refund & Cancellation Policy"
-        description="Our policy on milestone deliverables, monthly retainers, and cancellations."
-      />
 
-      <section className="section-pad py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl">
-          <div className="card mb-12 p-8 border border-gold-500/20 bg-paper-soft dark:bg-ink-soft">
-            <div className="flex items-center gap-3 text-gold-500 mb-2">
-              <RotateCcw size={20} />
-              <span className="font-mono text-xs uppercase tracking-widest2">Last Updated: October 2026</span>
-            </div>
-            <p className="text-sm text-charcoal-muted dark:text-ivory-muted leading-relaxed">
-              At <strong>{brand.name}</strong>, we build relationships around accountability and measurable outcomes. Because our services involve dedicated consulting hours, custom engineering, and strategic research, this policy outlines how cancellations and refunds are handled.
-            </p>
+      {/* ── Page Header ── */}
+      <section className="relative overflow-hidden pt-36 pb-14 sm:pt-44 sm:pb-20 border-b border-charcoal/10 dark:border-ivory/10">
+        <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-gold-500/10 blur-[140px]" />
+        <div className="section-pad max-w-6xl mx-auto">
+          {/* Back Navigation */}
+          <Link
+            to="/"
+            className="mb-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted hover:text-gold-500 transition-colors"
+          >
+            <ArrowLeft size={14} />
+            Back to Home
+          </Link>
+
+          <div className="flex flex-wrap items-center gap-3 mb-5">
+            <span className="eyebrow flex items-center gap-2">
+              <span className="h-px w-6 bg-gold-500" />
+              Legal &amp; Compliance
+            </span>
+            <span className="rounded-full bg-gold-500/10 border border-gold-500/30 px-3 py-0.5 font-mono text-[10px] uppercase tracking-widest text-gold-600 dark:text-gold-400">
+              Transparent Terms
+            </span>
           </div>
 
-          <div className="space-y-12 text-charcoal dark:text-ivory">
-            {/* 1. Monthly Retainers */}
-            <div className="space-y-4">
-              <h2 className="font-display text-2xl text-charcoal dark:text-ivory flex items-center gap-3">
-                <span className="text-gold-500 font-mono text-lg">01.</span> Monthly Retainers &amp; No-Lock-in Contracts
-              </h2>
-              <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
-                We believe in earning our clients&rsquo; trust every single month. We do not trap clients into rigid multi-year lock-in contracts.
+          <h1 className="text-display-md sm:text-display-lg font-display font-medium text-charcoal dark:text-ivory max-w-3xl">
+            Refund &amp; Cancellation Policy
+          </h1>
+
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted sm:text-base">
+            We judge ourselves on outcomes, not billable activity. Here is our straightforward policy on monthly retainers, fixed-scope deposits, and third-party media budgets.
+          </p>
+
+          {/* Quick Metadata Pill Bar */}
+          <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-charcoal-muted dark:text-ivory-muted">
+            <div className="flex items-center gap-2">
+              <RotateCcw size={15} className="text-gold-500 shrink-0" />
+              <span>Updated: <strong>October 2026</strong></span>
+            </div>
+            <span className="hidden sm:inline text-charcoal/20 dark:text-ivory/20">•</span>
+            <div>Contract Model: <strong>No Multi-Year Lock-ins</strong></div>
+            <span className="hidden sm:inline text-charcoal/20 dark:text-ivory/20">•</span>
+            <div>Notice Period: <strong>Prior to next billing cycle</strong></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Main Layout (Sidebar + Content) ── */}
+      <section className="section-pad py-12 sm:py-20 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[260px_1fr]">
+          {/* Sticky Sidebar Navigation */}
+          <aside className="lg:sticky lg:top-28 lg:h-fit">
+            <div className="card p-5 sm:p-6 border border-charcoal/10 dark:border-ivory/10">
+              <p className="font-mono text-[10px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted mb-4">
+                Policy Sections
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-sm text-charcoal-muted dark:text-ivory-muted">
-                <li><strong>Cancellation:</strong> You may cancel your monthly retainer agreement at any time by providing written notice prior to the start of the next billing cycle.</li>
-                <li><strong>Active Month:</strong> Fees already paid for the current active billing period are non-refundable, as agency resources and campaign management are allocated from day one. Services will continue through the end of the paid period.</li>
+              <nav className="flex flex-row flex-wrap gap-2 lg:flex-col lg:gap-1.5">
+                {sections.map((sec) => (
+                  <button
+                    key={sec.id}
+                    onClick={() => scrollToSection(sec.id)}
+                    className={`flex items-center gap-2 rounded-lg px-3 py-2 text-left text-xs transition-all duration-200 ${
+                      activeSection === sec.id
+                        ? 'bg-gold-500/15 text-gold-600 dark:text-gold-400 font-medium'
+                        : 'text-charcoal-muted dark:text-ivory-muted hover:bg-charcoal/5 dark:hover:bg-ivory/5 hover:text-charcoal dark:hover:text-ivory'
+                    }`}
+                  >
+                    <span className="font-mono text-[10px] opacity-60">{sec.number}</span>
+                    <span className="truncate">{sec.title}</span>
+                  </button>
+                ))}
+              </nav>
+
+              <div className="mt-6 pt-6 border-t border-charcoal/10 dark:border-ivory/10 hidden lg:block">
+                <p className="text-[11px] text-charcoal-muted dark:text-ivory-muted leading-relaxed">
+                  Questions about an upcoming invoice?
+                </p>
+                <a
+                  href={`mailto:${brand.email}`}
+                  className="mt-2 inline-flex items-center gap-1.5 text-xs text-gold-600 dark:text-gold-400 hover:underline"
+                >
+                  <Mail size={12} />
+                  {brand.email}
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          {/* ── Detailed Policy Sections ── */}
+          <div className="space-y-12 sm:space-y-16">
+            {/* Section 01 */}
+            <article id="retainers" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  01
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  Monthly Retainers &amp; No-Lock-in Promise
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
+                We believe in earning our clients&rsquo; trust each month through tangible performance. We do not lock brands into 6-month or 12-month punitive contracts.
+              </p>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 pt-2">
+                <div className="card p-5 border border-charcoal/10 dark:border-ivory/10 space-y-2">
+                  <div className="flex items-center gap-2 text-gold-500 text-xs font-semibold uppercase font-mono">
+                    <CheckCircle2 size={14} />
+                    Cancel Anytime
+                  </div>
+                  <p className="text-xs text-charcoal-muted dark:text-ivory-muted leading-relaxed">
+                    You may pause or terminate a retainer before the start of the next billing cycle without penalty.
+                  </p>
+                </div>
+                <div className="card p-5 border border-charcoal/10 dark:border-ivory/10 space-y-2">
+                  <div className="flex items-center gap-2 text-gold-500 text-xs font-semibold uppercase font-mono">
+                    <Clock size={14} />
+                    Active Month Coverage
+                  </div>
+                  <p className="text-xs text-charcoal-muted dark:text-ivory-muted leading-relaxed">
+                    Fees already paid for the current active month are non-refundable, as studio time and team hours are already committed.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            {/* Section 02 */}
+            <article id="projects" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  02
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  Milestone Projects &amp; Upfront Deposits
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
+                For custom website builds, full brand identities, and standalone design sprints:
+              </p>
+              <ul className="space-y-2.5 text-sm text-charcoal-muted dark:text-ivory-muted pl-1">
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0" />
+                  <span><strong>Project Kickoff Deposit:</strong> Upfront deposits cover initial research, information architecture, wireframing, and team capacity reservation. Once work has commenced, kickoff deposits are non-refundable.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0" />
+                  <span><strong>Milestone Invoices:</strong> Billed against deliverables (e.g. Design Approved, Staging Build Completed, Live Launch). Once a milestone is signed off, the associated stage payment is non-refundable.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0" />
+                  <span><strong>Early Project Termination:</strong> If a project is cancelled mid-sprint, the client will only be billed for completed hours and assets delivered up to the cancellation date.</span>
+                </li>
               </ul>
-            </div>
+            </article>
 
-            {/* 2. Fixed-Scope Projects */}
-            <div className="space-y-4">
-              <h2 className="font-display text-2xl text-charcoal dark:text-ivory flex items-center gap-3">
-                <span className="text-gold-500 font-mono text-lg">02.</span> Fixed-Scope &amp; Milestone Projects
-              </h2>
+            {/* Section 03 */}
+            <article id="adspend" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  03
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  Third-Party &amp; Direct Ad Spend
+                </h2>
+              </div>
+              <div className="card p-5 border border-charcoal/10 dark:border-ivory/10 flex items-start gap-3">
+                <Ban size={20} className="text-gold-500 shrink-0 mt-0.5" />
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold text-charcoal dark:text-ivory">Non-Refundable Media Disbursements</h3>
+                  <p className="text-xs leading-relaxed text-charcoal-muted dark:text-ivory-muted">
+                    Media spends paid directly to advertising networks (Google Ads, Meta Ads, LinkedIn Campaign Manager), custom domain registrations, and third-party SaaS licenses are paid directly to those respective vendors and cannot be refunded by MarketMinds under any circumstance.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            {/* Section 04 */}
+            <article id="revisions" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  04
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  Revisions &amp; Quality Guarantee
+                </h2>
+              </div>
               <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
-                For fixed-scope projects (such as website design &amp; development or comprehensive brand identity systems):
+                Instead of rigid disputes, we build revision rounds into every project milestone. If a concept or campaign draft does not meet your expectations, we collaborate closely during the revision stage to iterate until the deliverable aligns with your strategic objectives.
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-sm text-charcoal-muted dark:text-ivory-muted">
-                <li><strong>Kickoff Deposit:</strong> Upfront deposits cover initial discovery, architectural planning, and resource reservation, and are non-refundable once work commences.</li>
-                <li><strong>Milestone Sign-Off:</strong> Projects are billed against defined milestone deliveries. Once a milestone is reviewed, approved, and delivered, associated fees are non-refundable.</li>
-                <li><strong>Early Project Termination:</strong> If a project is cancelled before completion, the client will only be invoiced for completed work hours and delivered assets up to the cancellation notice date.</li>
-              </ul>
-            </div>
+            </article>
 
-            {/* 3. Non-Refundable Expenses */}
-            <div className="space-y-4">
-              <h2 className="font-display text-2xl text-charcoal dark:text-ivory flex items-center gap-3">
-                <span className="text-gold-500 font-mono text-lg">03.</span> Third-Party &amp; Direct Ad Spend
-              </h2>
+            {/* Section 05 */}
+            <article id="cancellation" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  05
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  How to Request a Cancellation
+                </h2>
+              </div>
               <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
-                Direct advertising spends disbursed to third-party ad networks (Meta Ads, Google Ads, LinkedIn Ads, etc.), domain registrations, premium third-party font/asset licenses, and hosting fees are paid directly to those platforms and are strictly non-refundable by MarketMinds.
+                To pause or cancel an active retainer or upcoming milestone:
               </p>
-            </div>
+              <div className="space-y-2 text-xs text-charcoal dark:text-ivory">
+                <div className="card p-4 border border-charcoal/10 dark:border-ivory/10 flex items-center gap-3">
+                  <span className="font-mono text-gold-500 font-bold">Step 1</span>
+                  <span>Send written notification to <a href={`mailto:${brand.email}`} className="text-gold-500 hover:underline">{brand.email}</a> prior to your next billing date.</span>
+                </div>
+                <div className="card p-4 border border-charcoal/10 dark:border-ivory/10 flex items-center gap-3">
+                  <span className="font-mono text-gold-500 font-bold">Step 2</span>
+                  <span>Our team acknowledges the request within 1 business day and prepares an orderly handover checklist.</span>
+                </div>
+                <div className="card p-4 border border-charcoal/10 dark:border-ivory/10 flex items-center gap-3">
+                  <span className="font-mono text-gold-500 font-bold">Step 3</span>
+                  <span>All finalized creatives, ad reports, and source files are packaged and delivered to your designated drive.</span>
+                </div>
+              </div>
+            </article>
 
-            {/* 4. Revision & Satisfaction */}
-            <div className="space-y-4">
-              <h2 className="font-display text-2xl text-charcoal dark:text-ivory flex items-center gap-3">
-                <span className="text-gold-500 font-mono text-lg">04.</span> Feedback &amp; Revisions
-              </h2>
+            {/* Section 06 */}
+            <article id="disputes" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  06
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  Dispute Resolution
+                </h2>
+              </div>
               <p className="text-sm leading-relaxed text-charcoal-muted dark:text-ivory-muted">
-                We work collaboratively at every step. If you are not satisfied with a draft deliverable, we include structured feedback and revision rounds in every scope to ensure the final output aligns with your strategic goals before final sign-off.
+                In the rare event of a disagreement regarding deliverables or billing, both parties agree to engage in constructive dialogue with agency leadership before taking formal legal steps. Our goal is always a fair resolution that respects both parties&rsquo; time and investment.
               </p>
-            </div>
+            </article>
 
-            {/* 5. Contact Box */}
-            <div className="card p-8 bg-paper-raised dark:bg-ink-raised border border-gold-500/20 rounded-xl space-y-4">
-              <h3 className="font-display text-xl text-charcoal dark:text-ivory flex items-center gap-2">
-                <Mail size={18} className="text-gold-500" />
-                Billing Inquiries
-              </h3>
-              <p className="text-sm text-charcoal-muted dark:text-ivory-muted leading-relaxed">
-                If you have questions regarding an invoice or wish to adjust your service plan, reach out directly:
+            {/* Section 07 */}
+            <article id="billing" className="scroll-mt-32 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500/10 font-mono text-xs font-semibold text-gold-500 border border-gold-500/20">
+                  07
+                </span>
+                <h2 className="font-display text-xl sm:text-2xl font-medium text-charcoal dark:text-ivory">
+                  Billing &amp; Invoice Inquiries
+                </h2>
+              </div>
+              <div className="card p-6 sm:p-8 bg-paper-soft dark:bg-ink-soft border border-gold-500/30 rounded-2xl space-y-4">
+                <p className="text-sm text-charcoal-muted dark:text-ivory-muted leading-relaxed">
+                  For questions about statements of work, invoices, or cancellation confirmations:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-charcoal dark:text-ivory pt-2">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted block mb-1">
+                      Billing Team
+                    </span>
+                    <strong className="text-base">{brand.name} Accounts</strong>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted block mb-1">
+                      Direct Email
+                    </span>
+                    <a href={`mailto:${brand.email}`} className="text-gold-600 dark:text-gold-400 hover:underline">
+                      {brand.email}
+                    </a>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted block mb-1">
+                      Phone
+                    </span>
+                    <a href={`tel:${brand.phoneHref}`} className="text-gold-600 dark:text-gold-400 hover:underline">
+                      {brand.phoneDisplay}
+                    </a>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-charcoal-muted dark:text-ivory-muted block mb-1">
+                      Operating Office
+                    </span>
+                    <span>{brand.address}</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* ── Related Legal Links ── */}
+            <div className="pt-10 border-t border-charcoal/10 dark:border-ivory/10">
+              <p className="font-mono text-[11px] uppercase tracking-widest2 text-charcoal-muted dark:text-ivory-muted mb-4">
+                Related Policies &amp; Agreements
               </p>
-              <div className="text-sm space-y-1 text-charcoal dark:text-ivory">
-                <p><strong>{brand.name}</strong></p>
-                <p>Email: <a href={`mailto:${brand.email}`} className="text-gold-500 hover:underline">{brand.email}</a></p>
-                <p>Phone: <a href={`tel:${brand.phoneHref}`} className="text-gold-500 hover:underline">{brand.phoneDisplay}</a></p>
-                <p>Address: {brand.address}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Link
+                  to="/privacy-policy"
+                  className="card p-5 border border-charcoal/10 dark:border-ivory/10 hover:border-gold-500/40 transition-all group flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-3">
+                    <ShieldCheck size={18} className="text-gold-500" />
+                    <div>
+                      <h3 className="text-sm font-medium text-charcoal dark:text-ivory group-hover:text-gold-500 transition-colors">
+                        Privacy Policy
+                      </h3>
+                      <p className="text-xs text-charcoal-muted dark:text-ivory-muted">Data protection, rights &amp; security</p>
+                    </div>
+                  </div>
+                  <ArrowUpRight size={15} className="text-charcoal-muted dark:text-ivory-muted group-hover:text-gold-500 transition-colors" />
+                </Link>
+
+                <Link
+                  to="/terms"
+                  className="card p-5 border border-charcoal/10 dark:border-ivory/10 hover:border-gold-500/40 transition-all group flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-3">
+                    <FileText size={18} className="text-gold-500" />
+                    <div>
+                      <h3 className="text-sm font-medium text-charcoal dark:text-ivory group-hover:text-gold-500 transition-colors">
+                        Terms &amp; Conditions
+                      </h3>
+                      <p className="text-xs text-charcoal-muted dark:text-ivory-muted">Client scopes, IP &amp; billing agreements</p>
+                    </div>
+                  </div>
+                  <ArrowUpRight size={15} className="text-charcoal-muted dark:text-ivory-muted group-hover:text-gold-500 transition-colors" />
+                </Link>
               </div>
             </div>
           </div>
