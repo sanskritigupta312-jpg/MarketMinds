@@ -20,7 +20,7 @@ export const brand = {
   phoneHref: '+918707858634',
   whatsappNumber: '918707858634', // digits only, country code first, no +
   whatsappDefaultMessage: "Hi MarketMinds — I'd like to talk about a project.",
-  address: 'India · Working with brands worldwide',
+  address: 'Lucknow, UP, India',
   socials: [
     { label: 'Instagram', href: 'https://www.instagram.com/market.minds001?igsh=aG5jM2tsY25rYnpy' },
     { label: 'LinkedIn', href: 'https://linkedin.com' },
